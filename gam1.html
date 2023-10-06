@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <!-- cont1 -->
+    <div id="cont1">
+    </div>
+    <!-- cont2 -->
+    <div id="cont2">
+      <div id="bnt1"></div>
+      <div id="bnt2"></div>
+      <button id="bnt3">play</button>
+    </div>
+  </div>
+  <script>
+    // design
+    const root = document.getElementById('root');
+    root.style.height = "100vh";
+    root.style.width = "100vw";
+
+    let cont2 = document.getElementById('cont2');
+    cont2.style.position = "absolute";
+    cont2.style.right = "5vw";
+    cont2.style.top = "10vh";
+    cont2.style.width = "30vw";
+    cont2.style.height = "80vh";
+    cont2.style.background = "rgba(1,1,1,0.2)";
+    let bnt1 = document.getElementById('bnt1');
+    bnt1.style.position = "absolute";
+    bnt1.style.top = "30vh";
+    bnt1.style.width = "30vw";
+    bnt1.style.height = "10vh";
+    bnt1.style.background = "rgba(1,1,1,0.2)";
+    let bnt2 = document.getElementById('bnt2');
+    bnt2.style.position = "absolute";
+    bnt2.style.top = "41vh";
+    bnt2.style.width = "30vw";
+    bnt2.style.height = "10vh";
+    bnt2.style.background = "rgba(1,1,1,0.2)";
+    let bnt3 = document.getElementById('bnt3');
+    bnt3.style.position = "absolute";
+    bnt3.style.top = "52vh";
+    bnt3.style.width = "30vw";
+    bnt3.style.height = "10vh";
+    bnt3.style.background = "rgba(1,1,1,0.2)";
+
+    let cont1 = document.getElementById('cont1');
+    cont1.style.position = "absolute";
+    cont1.style.left = "5vw";
+    cont1.style.top = "10vh";
+    cont1.style.width = "55vw";
+    cont1.style.height = "80vh";
+    cont1.style.background = "rgba(1,1,1,0.2)";
+    
+    
+    
+
+
+
+    bnt3.addEventListener('click',
+    function (event) {
+
+    let intv = setInterval(function () {
+
+    let mkmon = document.createElement('div');
+    let x = Math.floor(Math.random() * 480);
+    let y = Math.floor(Math.random() * 780);
+    let xString = x.toString();
+    let ySting = y.toString();
+    mkmon.style.position = "absolute";
+    mkmon.style.top = ySting + "px";
+    mkmon.style.left = xString + "px";
+    mkmon.style.width = "3vw";
+    mkmon.style.height = "3vh";
+    mkmon.style.borderRadius = "50vh";
+    mkmon.style.background = "rgba(1,1,1,0.8)";
+    let mov1 = 10;
+    cont1.appendChild(mkmon);
+    mkmon.addEventListener('click', function () {
+      mkmon.remove();
+    });
+    }, 500)
+  },3000)
+      
+
+    
+
+
+      // let intv = setInterval(function () {
+        //   mon1.style.top = mov + "px"
+        //   mon1.style.left = mov + "px"
+        //   mov++
+        // }, 30);
+        // // clearInterval(intv)
+
+
+
+
+
+      // bnt3.addEventListener('click', 
+      //   function(){
+      //     setInterval(function(){
+      //     mon1.style.top = mov + "px"
+      //     mon1.style.left = mov + "px"
+      //     mov++
+      //     }, 30);
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
