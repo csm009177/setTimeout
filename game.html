@@ -1,95 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box;
-        background-color: gray; }
-    </style>
-  </head>
-  <body>
-    <div id="root">
-      <!-- cont1 -->
-      <div id="cont1"> 
-        <div id="mon1"></div>
-        <div id="mon2"></div>
-        <div id="mon3"></div>
-      </div>
-      <!-- cont2 -->
-      <div id="cont2">
-        <div id="bnt1"></div>
-        <div id="bnt2"></div>
-        <button id="bnt3"></button>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <!-- cont1 -->
+    <div id="cont1">
+      <div id="mon1"></div>
+      <div id="mon2"></div>
+      <div id="mon3"></div>
     </div>
-    <script>
-      const root = document.getElementById('root');
+    <!-- cont2 -->
+    <div id="cont2">
+      <div id="bnt1"></div>
+      <div id="bnt2"></div>
+      <button id="bnt3">play</button>
+    </div>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+    root.style.height = "100vh";
+    root.style.width = "100vw";
 
-      let cont1 = document.getElementById('cont1');
-      cont1.style.position = "absolute";
-      cont1.style.left = "5vw";
-      cont1.style.top = "10vh";
-      cont1.style.width = "50vw";
-      cont1.style.height = "80vh";
-      cont1.style.background = "rgba(1,1,1,0.2)";
+    let cont1 = document.getElementById('cont1');
+    cont1.style.position = "absolute";
+    cont1.style.left = "5vw";
+    cont1.style.top = "10vh";
+    cont1.style.width = "55vw";
+    cont1.style.height = "80vh";
+    cont1.style.background = "rgba(1,1,1,0.2)";
 
-      let mon1 = document.getElementById('mon1');
-      mon1.style.position = "absolute";
-      mon1.style.left = "1vw";
-      mon1.style.top = "1vh";
-      mon1.style.width = "5vw";
-      mon1.style.height = "5vh";
-      mon1.style.background = "rgba(1,1,1,0.8)";
-      let mon2 = document.getElementById('mon2');
-      mon2.style.position = "absolute";
-      mon2.style.left = "7vw";
-      mon2.style.top = "7vh";
-      mon2.style.width = "5vw";
-      mon2.style.height = "5vh";
-      mon2.style.background = "rgba(1,1,1,0.8)";
-      let mon3 = document.getElementById('mon3');
-      mon3.style.position = "absolute";
-      mon3.style.left = "15vw";
-      mon3.style.top = "15vh";
-      mon3.style.width = "5vw";
-      mon3.style.height = "5vh";
-      mon3.style.background = "rgba(1,1,1,0.8)";
+    // let mon1 = document.getElementById('mon1');
+    // mon1.style.position = "absolute";
+    // mon1.style.left = "1vw";
+    // mon1.style.top = "1vh";
+    // mon1.style.width = "5vw";
+    // mon1.style.height = "5vh";
+    // mon1.style.borderRadius = "50vh";
+    // mon1.style.background = "rgba(1,1,1,0.8)";
+    // let mov = 10;
+    // let mon2 = document.getElementById('mon2');
+    // mon2.style.position = "absolute";
+    // mon2.style.left = "7vw";
+    // mon2.style.top = "7vh";
+    // mon2.style.width = "5vw";
+    // mon2.style.height = "5vh";
+    // mon2.style.borderRadius = "50vh";
+    // mon2.style.background = "rgba(1,1,1,0.8)";
+    // let mon3 = document.getElementById('mon3');
+    // mon3.style.position = "absolute";
+    // mon3.style.left = "15vw";
+    // mon3.style.top = "15vh";
+    // mon3.style.width = "5vw";
+    // mon3.style.height = "5vh";
+    // mon3.style.borderRadius = "50vh";
+    // mon3.style.background = "rgba(1,1,1,0.8)";
 
-      let cont2 = document.getElementById('cont2');
-      cont2.style.position = "absolute";
-      cont2.style.right = "5vw";
-      cont2.style.top = "10vh";
-      cont2.style.width = "30vw";
-      cont2.style.height = "80vh";
-      cont2.style.background = "rgba(1,1,1,0.2)";
 
-      let bnt1 = document.getElementById('bnt1');
-      bnt1.style.position = "absolute";
-      bnt1.style.top = "30vh";
-      bnt1.style.width = "30vw";
-      bnt1.style.height = "10vh";
-      bnt1.style.background = "rgba(1,1,1,0.2)";
-      let bnt2 = document.getElementById('bnt2');
-      bnt2.style.position = "absolute";
-      bnt2.style.top = "41vh";
-      bnt2.style.width = "30vw";
-      bnt2.style.height = "10vh";
-      bnt2.style.background = "rgba(1,1,1,0.2)";
-      let bnt3 = document.getElementById('bnt3');
-      bnt3.style.position = "absolute";
-      bnt3.style.top = "52vh";
-      bnt3.style.width = "30vw";
-      bnt3.style.height = "10vh";
-      bnt3.style.background = "rgba(1,1,1,0.2)";
 
+
+    let cont2 = document.getElementById('cont2');
+    cont2.style.position = "absolute";
+    cont2.style.right = "5vw";
+    cont2.style.top = "10vh";
+    cont2.style.width = "30vw";
+    cont2.style.height = "80vh";
+    cont2.style.background = "rgba(1,1,1,0.2)";
+
+    let bnt1 = document.getElementById('bnt1');
+    bnt1.style.position = "absolute";
+    bnt1.style.top = "30vh";
+    bnt1.style.width = "30vw";
+    bnt1.style.height = "10vh";
+    bnt1.style.background = "rgba(1,1,1,0.2)";
+    let bnt2 = document.getElementById('bnt2');
+    bnt2.style.position = "absolute";
+    bnt2.style.top = "41vh";
+    bnt2.style.width = "30vw";
+    bnt2.style.height = "10vh";
+    bnt2.style.background = "rgba(1,1,1,0.2)";
+    let bnt3 = document.getElementById('bnt3');
+    bnt3.style.position = "absolute";
+    bnt3.style.top = "52vh";
+    bnt3.style.width = "30vw";
+    bnt3.style.height = "10vh";
+    bnt3.style.background = "rgba(1,1,1,0.2)";
+
+
+
+    bnt3.addEventListener('click',
+      function () {
+        let mon1 = document.getElementById('mon1');
+    mon1.style.position = "absolute";
+    mon1.style.left = "1vw";
+    mon1.style.top = "1vh";
+    mon1.style.width = "5vw";
+    mon1.style.height = "5vh";
+    mon1.style.borderRadius = "50vh";
+    mon1.style.background = "rgba(1,1,1,0.8)";
+    let mov1 = 10;
+    let mon2 = document.getElementById('mon2');
+    mon2.style.position = "absolute";
+    mon2.style.left = "7vw";
+    mon2.style.top = "7vh";
+    mon2.style.width = "5vw";
+    mon2.style.height = "5vh";
+    mon2.style.borderRadius = "50vh";
+    mon2.style.background = "rgba(1,1,1,0.8)";
+    let mov2 = 10;
+    let mon3 = document.getElementById('mon3');
+    mon3.style.position = "absolute";
+    mon3.style.left = "15vw";
+    mon3.style.top = "15vh";
+    mon3.style.width = "5vw";
+    mon3.style.height = "5vh";
+    mon3.style.borderRadius = "50vh";
+    mon3.style.background = "rgba(1,1,1,0.8)";
+    let mov3 = 10;
+
+        let intv = setInterval(function (event) {
+        let x = Math.floor(Math.random() * event.pageX + 200)
+        let y = Math.floor(Math.random() * event.pageY + 200)
+        let xString = x.toString()
+        let ySting = y.toString()
+
+        mon1.style.top = ySting + "px";
+        mon1.style.left = xString + "px";
+        mon2.style.bottom = ySting + "px";
+        mon2.style.left = xString + "px";
+        mon3.style.bottom = ySting + "px";
+        mon3.style.right = xString + "px";
+
+        mov1++
+        mov2++
+        mov3++
+        },1000)
+        mon1.addEventListener('click', function () {
+          clearInterval(intv);
+        });
+    }, 500)
       
 
 
 
 
-    </script>
-  </body>
+      // let intv = setInterval(function () {
+        //   mon1.style.top = mov + "px"
+        //   mon1.style.left = mov + "px"
+        //   mov++
+        // }, 30);
+        // // clearInterval(intv)
+
+
+
+
+
+      // bnt3.addEventListener('click', 
+      //   function(){
+      //     setInterval(function(){
+      //     mon1.style.top = mov + "px"
+      //     mon1.style.left = mov + "px"
+      //     mov++
+      //     }, 30);
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
 </html>
