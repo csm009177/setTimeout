@@ -7,7 +7,7 @@
   <title>Document</title>
   <style>
     *{ margin:0; padding:0; box-sizing: border-box;}
-    #root { width: 100vw; height: 100vh; background: green;}
+    #root { width: 100vw; height: 100vh; background: rgb(128, 128, 128, 1 );}
   </style>
 </head>
 <body>
@@ -16,18 +16,33 @@
   </div>
   <script>
     const sosa = document.getElementById('sosa');
+    const root = document.getElementById('root');
     console.log(sosa);
-    sosa.style.width = "100px";
-    sosa.style.height = "100px";
+    sosa.style.width = "1vw";
+    sosa.style.height = "1vh";
     sosa.style.background = "black";
     sosa.style.position = "absolute";
-    let move = 100;
-    sosa.style.top = move + "px";
-    setInterval(function() {
+    let move = 10;
+    let ht = 0.5;
+
+  
+    let sItv = setInterval(function() {
       sosa.style.top = move + "px";
       sosa.style.left = move + "px";
+      sosa.style.height = ht + "px";
+      sosa.style.width = ht + "px";
+      root.style.backgroundColor = `rgba(128,128,128,${ht})`
+      if(ht>){
+        sosa.style.background = "red";
+        root.style.background = "green"
+      }
       move++;
-    }, 1000);
+      ht++
+    }, 37);
+
+    clearInterval(sItv);
+
+
   </script>
 </body>
 </html>
