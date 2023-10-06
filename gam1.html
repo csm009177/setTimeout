@@ -12,6 +12,7 @@
       padding: 0;
       box-sizing: border-box;
       background-color: gray;
+      /* text-align: center; */
     }
   </style>
 </head>
@@ -23,7 +24,10 @@
     </div>
     <!-- cont2 -->
     <div id="cont2">
-      <div id="bnt1"></div>
+      <div>
+        <h1 id="scorebd">score</h1>
+        <h1 id="score"></h1>
+      </div>
       <div>
         <h1 id="timebd">timecount</h1>
         <h1 id="timecount"></h1>
@@ -44,24 +48,37 @@
     cont2.style.width = "30vw";
     cont2.style.height = "80vh";
     cont2.style.background = "rgba(1,1,1,0.2)";
-    let bnt1 = document.getElementById('bnt1');
-    bnt1.style.position = "absolute";
-    bnt1.style.top = "30vh";
-    bnt1.style.width = "30vw";
-    bnt1.style.height = "10vh";
-    bnt1.style.background = "rgba(1,1,1,0.2)";
+    
+    let scorebd = document.getElementById('scorebd');
+    scorebd.style.position = "absolute";
+    scorebd.style.top = "30vh";
+    scorebd.style.width = "30vw";
+    scorebd.style.height = "5vh";
+    scorebd.style.background = "rgba(1,1,1,0.2)";
+    scorebd.style.textAlign = "center";
+    let score = document.getElementById('score');
+    score.style.position = "absolute";
+    score.style.top = "35vh";
+    score.style.width = "30vw";
+    score.style.height = "5vh";
+    score.style.background = "rgba(1,1,1,0.2)";
+    score.style.textAlign = "center";
+
     let timebd = document.getElementById('timebd');
     timebd.style.position = "absolute";
     timebd.style.top = "41vh";
     timebd.style.width = "30vw";
     timebd.style.height = "5vh";
     timebd.style.background = "rgba(1,1,1,0.2)";
+    timebd.style.textAlign = "center";
     let timecount = document.getElementById('timecount');
     timecount.style.position = "absolute";
     timecount.style.top = "46vh";
     timecount.style.width = "30vw";
     timecount.style.height = "5vh";
     timecount.style.background = "rgba(1,1,1,0.2)";
+    timecount.style.textAlign = "center";
+
     let bnt = document.getElementById('bnt');
     bnt.style.position = "absolute";
     bnt.style.top = "52vh";
@@ -103,11 +120,12 @@
         cont1.appendChild(mkmon);
         mkmon.addEventListener('click', function () {
           mkmon.remove();
+          
         });
         time = time-1;
         timecount.textContent = `${time}`
         if(time===0){
-          clearInterval(intv)
+          clearInterval(intv);
         }
       }, 1000)
   },1000)
