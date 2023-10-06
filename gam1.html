@@ -24,8 +24,8 @@
     <!-- cont2 -->
     <div id="cont2">
       <div id="bnt1"></div>
-      <div id="bnt2"></div>
-      <button id="bnt3">play</button>
+      <div><h1 id="timecount">timecount</h1></div>
+      <button id="bnt">play</button>
     </div>
   </div>
   <script>
@@ -47,18 +47,18 @@
     bnt1.style.width = "30vw";
     bnt1.style.height = "10vh";
     bnt1.style.background = "rgba(1,1,1,0.2)";
-    let bnt2 = document.getElementById('bnt2');
-    bnt2.style.position = "absolute";
-    bnt2.style.top = "41vh";
-    bnt2.style.width = "30vw";
-    bnt2.style.height = "10vh";
-    bnt2.style.background = "rgba(1,1,1,0.2)";
-    let bnt3 = document.getElementById('bnt3');
-    bnt3.style.position = "absolute";
-    bnt3.style.top = "52vh";
-    bnt3.style.width = "30vw";
-    bnt3.style.height = "10vh";
-    bnt3.style.background = "rgba(1,1,1,0.2)";
+    let timecount = document.getElementById('timecount');
+    timecount.style.position = "absolute";
+    timecount.style.top = "41vh";
+    timecount.style.width = "30vw";
+    timecount.style.height = "10vh";
+    timecount.style.background = "rgba(1,1,1,0.2)";
+    let bnt = document.getElementById('bnt');
+    bnt.style.position = "absolute";
+    bnt.style.top = "52vh";
+    bnt.style.width = "30vw";
+    bnt.style.height = "10vh";
+    bnt.style.background = "rgba(1,1,1,0.2)";
 
     let cont1 = document.getElementById('cont1');
     cont1.style.position = "absolute";
@@ -73,30 +73,35 @@
 
 
 
-    bnt3.addEventListener('click',
+    bnt.addEventListener('click',
     function (event) {
+      let time = 10;
+      let intv = setInterval(function () {
+        
+        let mkmon = document.createElement('div');
+        let x = Math.floor(Math.random() * 300);
+        let y = Math.floor(Math.random() * 700);
+        let xString = x.toString();
+        let ySting = y.toString();
+        mkmon.style.position = "absolute";
+        mkmon.style.top = ySting + "px";
+        mkmon.style.left = xString + "px";
+        mkmon.style.width = "3vw";
+        mkmon.style.height = "3vh";
+        mkmon.style.borderRadius = "50vh";
+        mkmon.style.background = "rgba(1,1,1,0.8)";
 
-    let intv = setInterval(function () {
-
-    let mkmon = document.createElement('div');
-    let x = Math.floor(Math.random() * 480);
-    let y = Math.floor(Math.random() * 780);
-    let xString = x.toString();
-    let ySting = y.toString();
-    mkmon.style.position = "absolute";
-    mkmon.style.top = ySting + "px";
-    mkmon.style.left = xString + "px";
-    mkmon.style.width = "3vw";
-    mkmon.style.height = "3vh";
-    mkmon.style.borderRadius = "50vh";
-    mkmon.style.background = "rgba(1,1,1,0.8)";
-    let mov1 = 10;
-    cont1.appendChild(mkmon);
-    mkmon.addEventListener('click', function () {
-      mkmon.remove();
-    });
-    }, 500)
-  },3000)
+        cont1.appendChild(mkmon);
+        mkmon.addEventListener('click', function () {
+          mkmon.remove();
+        });
+        time = time-1;
+        timecount.textContent = `${time}`
+        if(time===0){
+          clearInterval(intv)
+        }
+      }, 1000)
+  },1000)
       
 
     
@@ -113,7 +118,7 @@
 
 
 
-      // bnt3.addEventListener('click', 
+      // bnt.addEventListener('click', 
       //   function(){
       //     setInterval(function(){
       //     mon1.style.top = mov + "px"
