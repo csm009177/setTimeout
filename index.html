@@ -18,29 +18,31 @@
     const sosa = document.getElementById('sosa');
     const root = document.getElementById('root');
     console.log(sosa);
-    sosa.style.width = "1vw";
-    sosa.style.height = "1vh";
+    sosa.style.width = "10vw";
+    sosa.style.height = "10vh";
     sosa.style.background = "black";
     sosa.style.position = "absolute";
     let move = 10;
     let ht = 0.5;
 
-  
+    
     let sItv = setInterval(function() {
       sosa.style.top = move + "px";
       sosa.style.left = move + "px";
       sosa.style.height = ht + "px";
       sosa.style.width = ht + "px";
-      root.style.backgroundColor = `rgba(128,128,128,${ht})`
-      if(ht>){
+      // root.style.backgroundColor = `rgba(128,128,128,${ht})`
+      if(ht>100){
         sosa.style.background = "red";
         root.style.background = "green"
       }
       move++;
-      ht++
+      ht++;
     }, 37);
+    
+    
 
-    clearInterval(sItv);
+
 
 
   </script>
