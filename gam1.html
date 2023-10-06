@@ -24,7 +24,10 @@
     <!-- cont2 -->
     <div id="cont2">
       <div id="bnt1"></div>
-      <div><h1 id="timecount">timecount</h1></div>
+      <div>
+        <h1 id="timebd">timecount</h1>
+        <h1 id="timecount"></h1>
+      </div>
       <button id="bnt">play</button>
     </div>
   </div>
@@ -47,11 +50,17 @@
     bnt1.style.width = "30vw";
     bnt1.style.height = "10vh";
     bnt1.style.background = "rgba(1,1,1,0.2)";
+    let timebd = document.getElementById('timebd');
+    timebd.style.position = "absolute";
+    timebd.style.top = "41vh";
+    timebd.style.width = "30vw";
+    timebd.style.height = "5vh";
+    timebd.style.background = "rgba(1,1,1,0.2)";
     let timecount = document.getElementById('timecount');
     timecount.style.position = "absolute";
-    timecount.style.top = "41vh";
+    timecount.style.top = "46vh";
     timecount.style.width = "30vw";
-    timecount.style.height = "10vh";
+    timecount.style.height = "5vh";
     timecount.style.background = "rgba(1,1,1,0.2)";
     let bnt = document.getElementById('bnt');
     bnt.style.position = "absolute";
