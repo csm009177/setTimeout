@@ -1,16 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <style>
-      *{margin: 0; padding:0; box-sizing: border-box; background-color: gray;};
-      div{ width: 1vh; height:1vh; background-color: black;}
+      * { margin: 0; padding: 0; box-sizing: border-box;
+        background-color: gray; }
     </style>
-</head>
-<body>
-  <div></div>
-</body>
+  </head>
+  <body>
+    <div id="root">
+      <!-- cont1 -->
+      <div id="cont1"> 
+        <div id="mon1"></div>
+        <div id="mon2"></div>
+        <div id="mon3"></div>
+      </div>
+      <!-- cont2 -->
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script>
+      const root = document.getElementById('root');
+
+      let cont1 = document.getElementById('cont1');
+      cont1.style.position = "absolute";
+      cont1.style.left = "5vw";
+      cont1.style.top = "10vh";
+      cont1.style.width = "50vw";
+      cont1.style.height = "80vh";
+      cont1.style.background = "rgba(1,1,1,0.2)";
+
+      let mon1 = document.getElementById('mon1');
+      mon1.style.position = "absolute";
+      mon1.style.left = "1vw";
+      mon1.style.top = "1vh";
+      mon1.style.width = "5vw";
+      mon1.style.height = "5vh";
+      mon1.style.background = "rgba(1,1,1,0.8)";
+      let mon2 = document.getElementById('mon2');
+      mon2.style.position = "absolute";
+      mon2.style.left = "7vw";
+      mon2.style.top = "7vh";
+      mon2.style.width = "5vw";
+      mon2.style.height = "5vh";
+      mon2.style.background = "rgba(1,1,1,0.8)";
+      let mon3 = document.getElementById('mon3');
+      mon3.style.position = "absolute";
+      mon3.style.left = "15vw";
+      mon3.style.top = "15vh";
+      mon3.style.width = "5vw";
+      mon3.style.height = "5vh";
+      mon3.style.background = "rgba(1,1,1,0.8)";
+
+      let cont2 = document.getElementById('cont2');
+      cont2.style.position = "absolute";
+      cont2.style.right = "10vw";
+      cont2.style.top = "10vh";
+      cont2.style.width = "30vw";
+      cont2.style.height = "80vh";
+      cont2.style.background = "rgba(1,1,1,0.2)";
+
+
+    </script>
+  </body>
 </html>
