@@ -44,34 +44,6 @@
     cont1.style.height = "80vh";
     cont1.style.background = "rgba(1,1,1,0.2)";
 
-    // let mon1 = document.getElementById('mon1');
-    // mon1.style.position = "absolute";
-    // mon1.style.left = "1vw";
-    // mon1.style.top = "1vh";
-    // mon1.style.width = "5vw";
-    // mon1.style.height = "5vh";
-    // mon1.style.borderRadius = "50vh";
-    // mon1.style.background = "rgba(1,1,1,0.8)";
-    // let mov = 10;
-    // let mon2 = document.getElementById('mon2');
-    // mon2.style.position = "absolute";
-    // mon2.style.left = "7vw";
-    // mon2.style.top = "7vh";
-    // mon2.style.width = "5vw";
-    // mon2.style.height = "5vh";
-    // mon2.style.borderRadius = "50vh";
-    // mon2.style.background = "rgba(1,1,1,0.8)";
-    // let mon3 = document.getElementById('mon3');
-    // mon3.style.position = "absolute";
-    // mon3.style.left = "15vw";
-    // mon3.style.top = "15vh";
-    // mon3.style.width = "5vw";
-    // mon3.style.height = "5vh";
-    // mon3.style.borderRadius = "50vh";
-    // mon3.style.background = "rgba(1,1,1,0.8)";
-
-
-
 
     let cont2 = document.getElementById('cont2');
     cont2.style.position = "absolute";
@@ -103,7 +75,7 @@
 
 
     bnt3.addEventListener('click',
-      function () {
+      function (event) {
         let mon1 = document.getElementById('mon1');
     mon1.style.position = "absolute";
     mon1.style.left = "1vw";
@@ -131,23 +103,18 @@
     mon3.style.borderRadius = "50vh";
     mon3.style.background = "rgba(1,1,1,0.8)";
     let mov3 = 10;
+    let x = Math.floor(Math.random() * event.pageX + 200)
+    let y = Math.floor(Math.random() * event.pageY + 200)
+    let xString = x.toString()
+    let ySting = y.toString()
 
-        let intv = setInterval(function (event) {
-        let x = Math.floor(Math.random() * event.pageX + 200)
-        let y = Math.floor(Math.random() * event.pageY + 200)
-        let xString = x.toString()
-        let ySting = y.toString()
-
+        let intv = setInterval(function () {
         mon1.style.top = ySting + "px";
         mon1.style.left = xString + "px";
         mon2.style.bottom = ySting + "px";
         mon2.style.left = xString + "px";
         mon3.style.bottom = ySting + "px";
         mon3.style.right = xString + "px";
-
-        mov1++
-        mov2++
-        mov3++
         },1000)
         mon1.addEventListener('click', function () {
           clearInterval(intv);
@@ -155,7 +122,7 @@
     }, 500)
       
 
-
+    
 
 
       // let intv = setInterval(function () {
