@@ -63,6 +63,7 @@
     score.style.height = "5vh";
     score.style.background = "rgba(1,1,1,0.2)";
     score.style.textAlign = "center";
+    let count = 0;
 
     let timebd = document.getElementById('timebd');
     timebd.style.position = "absolute";
@@ -116,11 +117,13 @@
         mkmon.style.height = "3vh";
         mkmon.style.borderRadius = "50vh";
         mkmon.style.background = "rgba(1,1,1,0.8)";
-
+        
+        
         cont1.appendChild(mkmon);
         mkmon.addEventListener('click', function () {
           mkmon.remove();
-          
+          count = count +1;
+          score.textContent = `${count}`;
         });
         time = time-1;
         timecount.textContent = `${time}`
