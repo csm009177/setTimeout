@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{ margin:0; padding:0; box-sizing: border-box;}
+    #root { width: 100vw; height: 100vh; background: rgb(128, 128, 128, 1 );}
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="sosa"></div>
+  </div>
+  <script>
+    const sosa = document.getElementById('sosa');
+    const root = document.getElementById('root');
+    console.log(sosa);
+    sosa.style.width = "10vw";
+    sosa.style.height = "10vh";
+    sosa.style.background = "black";
+    sosa.style.position = "absolute";
+    let move = 10;
+    let ht = 0.5;
+
+
+    let sItv = setInterval(function() {
+      sosa.style.top = move + "px";
+      sosa.style.left = move + "px";
+      sosa.style.height = ht + "px";
+      sosa.style.width = ht + "px";
+      // root.style.backgroundColor = `rgba(128,128,128,${ht})`
+      if(ht>100){
+        sosa.style.background = "red";
+        root.style.background = "green"
+      }
+      move++;
+      ht++;
+    }, 37);
+    
+    
+clearInterval()
+
+
+
+  </script>
+</body>
+</html>

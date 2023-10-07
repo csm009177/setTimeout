@@ -1,50 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <style>
-    *{ margin:0; padding:0; box-sizing: border-box;}
-    #root { width: 100vw; height: 100vh; background: rgb(128, 128, 128, 1 );}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: gray;
+      /* text-align: center; */
+    }
   </style>
 </head>
+
 <body>
   <div id="root">
-    <div id="sosa"></div>
+    <!-- cont1 -->
+    <div id="cont1">
+    </div>
+    <!-- cont2 -->
+    <div id="cont2">
+      <div>
+        <h1 id="scorebd">score</h1>
+        <h1 id="score"></h1>
+      </div>
+      <div>
+        <h1 id="timebd">timecount</h1>
+        <h1 id="timecount"></h1>
+      </div>
+      <button id="bnt">play</button>
+    </div>
   </div>
   <script>
-    const sosa = document.getElementById('sosa');
+    // design
     const root = document.getElementById('root');
-    console.log(sosa);
-    sosa.style.width = "10vw";
-    sosa.style.height = "10vh";
-    sosa.style.background = "black";
-    sosa.style.position = "absolute";
-    let move = 10;
-    let ht = 0.5;
+    root.style.height = "100vh";
+    root.style.width = "100vw";
 
+    let cont2 = document.getElementById('cont2');
+    cont2.style.position = "absolute";
+    cont2.style.right = "5vw";
+    cont2.style.top = "10vh";
+    cont2.style.width = "30vw";
+    cont2.style.height = "80vh";
+    cont2.style.background = "rgba(1,1,1,0.2)";
+    
+    let scorebd = document.getElementById('scorebd');
+    scorebd.style.position = "absolute";
+    scorebd.style.top = "30vh";
+    scorebd.style.width = "30vw";
+    scorebd.style.height = "5vh";
+    scorebd.style.background = "rgba(1,1,1,0.2)";
+    scorebd.style.textAlign = "center";
+    let score = document.getElementById('score');
+    score.style.position = "absolute";
+    score.style.top = "35vh";
+    score.style.width = "30vw";
+    score.style.height = "5vh";
+    score.style.background = "rgba(1,1,1,0.2)";
+    score.style.textAlign = "center";
+    
 
-    let sItv = setInterval(function() {
-      sosa.style.top = move + "px";
-      sosa.style.left = move + "px";
-      sosa.style.height = ht + "px";
-      sosa.style.width = ht + "px";
-      // root.style.backgroundColor = `rgba(128,128,128,${ht})`
-      if(ht>100){
-        sosa.style.background = "red";
-        root.style.background = "green"
-      }
-      move++;
-      ht++;
-    }, 37);
+    let timebd = document.getElementById('timebd');
+    timebd.style.position = "absolute";
+    timebd.style.top = "41vh";
+    timebd.style.width = "30vw";
+    timebd.style.height = "5vh";
+    timebd.style.background = "rgba(1,1,1,0.2)";
+    timebd.style.textAlign = "center";
+    let timecount = document.getElementById('timecount');
+    timecount.style.position = "absolute";
+    timecount.style.top = "46vh";
+    timecount.style.width = "30vw";
+    timecount.style.height = "5vh";
+    timecount.style.background = "rgba(1,1,1,0.2)";
+    timecount.style.textAlign = "center";
+
+    let bnt = document.getElementById('bnt');
+    bnt.style.position = "absolute";
+    bnt.style.top = "52vh";
+    bnt.style.width = "30vw";
+    bnt.style.height = "10vh";
+    bnt.style.background = "rgba(1,1,1,0.2)";
+
+    let cont1 = document.getElementById('cont1');
+    cont1.style.position = "absolute";
+    cont1.style.left = "5vw";
+    cont1.style.top = "10vh";
+    cont1.style.width = "55vw";
+    cont1.style.height = "80vh";
+    cont1.style.background = "rgba(1,1,1,0.2)";
     
     
-clearInterval()
+    
+
+
+
+    bnt.addEventListener('click',
+    function (event) {
+      let count = 0;
+      let time = 10;
+      let intv = setInterval(function () {
+        
+        let mkmon = document.createElement('div');
+        let x = Math.floor(Math.random() * 300);
+        let y = Math.floor(Math.random() * 700);
+        let xString = x.toString();
+        let ySting = y.toString();
+        mkmon.style.position = "absolute";
+        mkmon.style.top = ySting + "px";
+        mkmon.style.left = xString + "px";
+        mkmon.style.width = "3vw";
+        mkmon.style.height = "3vh";
+        mkmon.style.borderRadius = "50vh";
+        mkmon.style.background = "rgba(1,1,1,0.8)";
+        
+        
+        cont1.appendChild(mkmon);
+        mkmon.addEventListener('click', function () {
+          mkmon.remove();
+          count = count +1;
+          score.textContent = `${count}`;
+        });
+        time = time-1;
+        timecount.textContent = `${time}`
+        if(time===0){
+          clearInterval(intv);
+        }
+      }, 1000)
+  },1000)
+      
+
+    
+
+
+      // let intv = setInterval(function () {
+        //   mon1.style.top = mov + "px"
+        //   mon1.style.left = mov + "px"
+        //   mov++
+        // }, 30);
+        // // clearInterval(intv)
+
+
+
+
+
+      // bnt.addEventListener('click', 
+      //   function(){
+      //     setInterval(function(){
+      //     mon1.style.top = mov + "px"
+      //     mon1.style.left = mov + "px"
+      //     mov++
+      //     }, 30);
+
+
+
+
+
 
 
 
   </script>
 </body>
+
 </html>
